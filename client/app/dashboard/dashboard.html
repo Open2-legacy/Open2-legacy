@@ -66,30 +66,6 @@
           </li>
 
 
-         <!--  <li class="attending event-item">
-            <p class="title">Drinks</p>
-            <p class="user"><i class="fa fa-user"></i>Kan</p>
-            <p class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>08:00:00 PM</p>
-            <p class="unjoin"><i class="fa fa-times" aria-hidden="true"></i><a href="">Remove Event</a></p>
-          </li>
-          <li class="attending event-item">
-            <p class="title">JAYZUSS</p>
-            <p class="user"><i class="fa fa-user"></i>Annie</p>
-            <p class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>08:00:00 PM</p>
-            <p class="unjoin"><i class="fa fa-times" aria-hidden="true"></i><a href="">Unjoin</a></p>
-          </li>
-          <li class="attending event-item">
-            <p class="title">TurnUPPPP!</p>
-            <p class="user"><i class="fa fa-user"></i>Jessica</p>
-            <p class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>08:00:00 PM</p>
-            <p class="unjoin"><i class="fa fa-times" aria-hidden="true"></i><a href="">Unjoin</a></p>
-          </li>
-          <li class="attending event-item">
-            <p class="title">"Okay Fine"</p>
-            <p class="user"><i class="fa fa-user"></i>Rich-ter</p>
-            <p class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>08:00:00 PM</p>
-            <p class="unjoin"><i class="fa fa-times" aria-hidden="true"></i><a href="">Unjoin</a></p>
-          </li> -->
         </ul>
       </div>
 
@@ -147,4 +123,18 @@
 
   <div>
 
+</div>
+
+
+<div ng-controller='dashboardCtrl'>
+  <div class='original-code'>
+    <h2>Event List</h2>
+    <div class='event-list' ng-repeat='event in events.list'> 
+      {{event}}
+    <p class='title'> {{event.eventname}} </p>
+    <p class='user'> {{event.username}} </p>
+    <p class="time"><i class="fa fa-clock-o" aria-hidden="true"></i> {{event.timestamp.slice(0,10)}} <span> {{event.timestamp.slice(10,19)}}</span> </p>
+    <button ng-click="join(event)"> {{event.status}} </button>
+    </div>
+  </div>
 </div>

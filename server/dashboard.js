@@ -116,7 +116,7 @@ router.post('/join', function(req, res){
       res.json({
           username : username,
           success : false,
-          message : 'that event already exist!'
+          message : 'You\'ve already joined this event.'
           });
     } else {
       console.log('inside join else');
