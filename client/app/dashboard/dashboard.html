@@ -1,0 +1,103 @@
+<div ng-controller="AppCtrl" class="admin-bar">
+  <a href="" ng-click="logout()" class="logout" id="logout">Logout&nbsp;&nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+  <div class="admin-logo"></div>
+</div>
+
+<div id="newEvent" ng-include src="'app/event/newEvent.html'"></div>
+
+<div class="nano" id="sidebar-wrapper">
+  <div class="sidebar nano-content" id="sidebar" ng-controller='dashboardCtrl'>
+    
+      <!-- event button -->
+      <div class="wrapper">
+        <button class="new-event" id="newEvent" ng-click="showAdvanced($event)">
+          <span>
+            New Event
+          </span>
+        </button>
+      </div>
+      
+      <div class="sidebar-expand sidebar-friends">
+        <div class="wrapper">
+          <p ng-click="toggleExpand(1)" class="expand-title"><i class="fa" ng-class="{
+            'fa-angle-down' : !toggled1,
+            'fa-angle-up'   : toggled1
+          }" aria-hidden="true"></i>
+          <i class="fa fa-user"></i>&nbsp;All Friends</p>
+        </div>
+        <div ng-show="expand1" class="sidebar-to-expand friends-list">
+          <p class="friend" ng-repeat='friend in friends | filter: userFilter'>{{friend.username}}</p>
+        </div>
+      </div>
+
+
+      <div class="sidebar-expand sidebar-my-events" ng-controller="hostedEventsCtrl">
+        <div class="wrapper">
+          <p ng-click="toggleExpand(2)" class="expand-title"><i class="fa" ng-class="{
+            'fa-angle-down' : !toggled2,
+            'fa-angle-up'   : toggled2
+          }" aria-hidden="true"></i>
+          <i class="fa fa-shopping-bag" aria-hidden="true"></i></i>&nbsp;Events I'm Hosting</p>
+        </div>
+        <div ng-show="expand2" class="sidebar-to-expand">
+          <ul>
+              <li class="my-event event-item" ng-repeat="event in hostedEvents"> 
+                <p class="title">{{event.eventname}}</p>
+                <p class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>{{event.timestamp.slice(0,10)}}<span>{{event.timestamp.slice(10,19)}}</span></p>
+                <p class="unjoin"><i class="fa fa-times" aria-hidden="true"></i><a href="">Remove Event</a></p>
+              </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="sidebar-events-attending wrapper" ng-controller="myEventsCtrl">
+        <h2>Events I'm Attending</h2>
+          <ul>
+            <li ng-repeat="(index, event) in eventsImAttending track by $index">
+              <p class="title">{{event.eventname}}</p>
+              <p class="time"><i class="fa fa-calendar-o" aria-hidden="true"></i>{{event.timestamp.slice(0,10)}}</p>
+              <p class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>{{event.timestamp.slice(11,19)}}</p>
+              <p class="unjoin"><i class="fa fa-times" aria-hidden="true"></i><a href="" ng-click="unjoin(event, index)">Leave Event</a></p>
+            </li>
+          </ul>
+      </div>
+
+  </div>
+</div>
+
+<div id='contentWrapper'>
+
+  <div id='firechat-wrapper' ng-controller='chatCtrl'>
+
+<!--     <a href='' ng-click='login()'>Login</a> -->
+      <div id="chat">
+        <div id="messageContainer">
+          <div id="example-messages">
+          </div>
+        </div>
+        <div class="message-input-container">
+          <div class="input-container">
+            <input type="text" id="messageInput" placeholder="Enter message here">
+            <i ng-click="addThumb()" class="fa fa-thumbs-o-up fa-lg" aria-hidden="true"></i>
+          </div>
+          <div class="button-container">
+            <button id='submit'><i class="fa fa-paper-plane" aria-hidden="true"></i>Submit</button>
+          </div>
+        </div>
+      </div>
+
+  <div>
+
+  <div ng-controller="otherEventsCtrl" class="events-container events-list"> 
+
+    <h2>Other Events</h2>
+    
+    <li ng-repeat="(index, event) in otherEvents">
+      <p class="title">{{event.eventname}}</p>
+      <p class="time"><i class="fa fa-calendar-o" aria-hidden="true"></i>{{event.timestamp.slice(0,10)}}</p>
+      <p class="time"><i class="fa fa-clock-o" aria-hidden="true"></i>{{event.timestamp.slice(11,19)}}</p>
+      <button ng-click="join(event, index)"><span>Join</span></button>
+    </li>
+
+  </div>
+</div>

@@ -1,0 +1,182 @@
+#sidebar-wrapper {
+  top: 0px;
+  position: fixed;
+  height: 100%;
+  background-color: #ececec;
+}
+
+.nano {
+  background: #bba;
+}
+
+.nano .nano-content {
+  padding: 0;
+}
+
+.nano .nano-pane   {
+  background: #888;
+}
+
+.nano .nano-slider {
+  background: #111;
+}
+
+#sidebar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: $topbar + 25px;
+
+  ul {
+    padding: 0px;
+  }
+
+  #newEvent {
+    // margin-left: 145px;
+    margin-top: 0px;
+  }
+
+  #logout {
+    float: right;
+  }
+
+  #title {
+    color: #FF4300;
+    text-align: center;
+    font-size: 40px;
+    text-align: left;
+  }
+  
+  .wrapper {
+    padding: 0 15px;
+  }
+}
+
+.new-event {
+  background-color: $blue;
+  border: 0;
+  border-radius: 3px;
+  padding: 12px;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 2px 0 0 $blue__1;
+  text-shadow: 0 1px 0 $blue__1;
+}
+
+.new-event:active > span {
+  position: relative;
+  top: -2px;
+}
+
+.new-event:hover {
+  text-shadow: 0 1px 0 $blue__1;
+  background-color: $blue_1;
+}
+
+.new-event:active {
+  box-shadow: 0 -2px 0 $blue__2, inset 0 -2px 0 #fff;
+  background-color: $blue__1;
+}
+
+.new-event-container {
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+}
+
+.expand-title {
+  background-color: #d0d0d0;
+  color: #2d2d2d;
+  padding: 10px;
+  border-radius: 3px;
+  
+  .fa:first-child {
+    margin: 0 8px;
+    color: #6d6d6d;
+  }
+
+  .fa:nth-child(2) {
+    margin-right: 3px;
+  }
+}
+
+.expand-title:hover {
+  background-color: #dfdfdf;
+}
+
+.expand-title:hover {
+  cursor: pointer;
+}
+
+.expand-title:focus {
+  outline: 0;
+}
+
+.sidebar-to-expand {
+  max-height: 5000px;
+  opacity: 1;
+  transition: all 0.15s ease-out;
+  color: #2d2d2d;
+
+  ul {
+    margin: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+}
+
+.sidebar-to-expand.ng-hide {
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.15s ease-out;
+}
+
+.event-item {
+
+  * {
+    margin: 0;
+  }
+
+  i {
+    margin-right: 15px;
+    color: $darkgray;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0 0 4px 0;
+  }
+}
+
+.event-item:first-child .title {
+  margin-top: 0;
+}
+
+.my-event {
+  padding: 20px 24px;
+}
+
+.friend, .my-event {
+  border-bottom: 1px solid #ccc;
+}
+
+.friend {
+  margin: 0;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.sidebar-events-attending {
+
+  ul li {
+    list-style: none;
+  }
+
+  ul li p {
+    margin: 2px;
+  }
+}

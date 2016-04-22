@@ -1,0 +1,23 @@
+<md-dialog aria-label="Dash" ng-cloak style="width: 500px">
+    <div ng-controller="dashboardCtrl" class="new-event-modal">
+
+      <h2>What do you feel like doing?</h2>
+
+      <div class="input-container">
+        <label>Pick a time</label>
+        <input type="time" id="timeInput" name="input" ng-model="time.value"/>
+        <i class="fa fa-clock-o new-event-icon" aria-hidden="true"></i>
+      </div>
+      
+      <div class="input-container">
+        <label>I want to...</label>
+        <input ng-model="user.activity" type="text">
+        <i class="fa fa-magic new-event-icon" aria-hidden="true"></i>
+      </div>
+
+      <button ng-click="click(); answer()" style="margin-right:20px;">
+        <span>Make Event</span>
+      </button>
+  
+  </div>
+</md-dialog>

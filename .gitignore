@@ -10,3 +10,9 @@ server/dbconfig.js
 
 ### assets ###
 client/assets
+
+### source images ###
+*.psd
+
+sideServer
+client/dist

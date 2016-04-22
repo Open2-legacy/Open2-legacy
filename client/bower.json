@@ -18,6 +18,13 @@
     "angular": "^1.5.3",
     "angular-material": "^1.0.7",
     "angular-ui-router": "^0.2.18",
-    "angular-route": "^1.5.3"
+    "angular-route": "^1.5.3",
+    "angular-moment": "^0.10.3",
+    "moment": "^2.13.0",
+    "emojify.js": "^1.1.0"
+  },
+  "resolutions": {
+    "angular": ">=1.2.0 <1.5.0",
+    "moment": ">=2.8.0 <2.11.0"
   }
 }

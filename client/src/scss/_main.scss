@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
-
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -7,7 +5,7 @@
 }
 
 body {
-  background: #105277;
+  background: #fff;
   font-family: 'Source Sans Pro';
 }
 
@@ -16,33 +14,22 @@ input, button {
 }
 
 .bodyColor2 {
-  background: #105277;
+  background: #fff;
 }
 
 .open {
   color: #FF4300;
-  text-align: left;
-  margin-left: 20px;
-  font-size: 25px;
+  text-align: center;
+  font-size: 40px;
 
 }
+/*.md-button {}*/
 
-#newEvent{
-  min-width: 250px;
-  margin-top: 5px;
-  margin-left: 55px;
-  margin-right: 20px;
+.font {
 }
-
 
 .dashQuestion {
   font-size: 30px;
-
-}
-h1 {
-  color:  #FF4500;
-  text-align: center;
-  font-size: 50px;
 }
 
 #eventContainer {
@@ -66,14 +53,6 @@ float: right;
   float: left;
 }
 */
-
-ul.ng-scope {
-  margin-top: 0px;
-}
-
-.md-primary .md-raised {
-
-}
 #eventsList {
   width : 48%;
   border: 1px solid black;
@@ -84,7 +63,6 @@ ul.ng-scope {
 .form-group {
   text-align: center;
   position: relative;
-  margin-bottom: 15px;
   padding: 25px;
 }
 
@@ -119,7 +97,7 @@ ul.ng-scope {
 
 .log-btn {
   background: #0AC986;
-  display: inline-block;
+  dispaly: inline-block;
   width: 100%;
   font-size: 16px;
   height: 50px;
@@ -216,6 +194,3 @@ ul.ng-scope {
     font-size: 12px;
     color: #dd2c00;
     margin: 10px 0 0 25px; }
-
-
-

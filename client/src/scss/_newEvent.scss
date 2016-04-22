@@ -1,0 +1,76 @@
+md-backdrop.md-opaque {
+  opacity: .48;
+}
+
+md-backdrop.md-opaque.ng-enter-active {
+  opacity: .48;
+  background-color: rgba(33,33,33,0.48);
+}
+
+.new-event-modal {
+  border-radius: 5px;
+  padding: 35px;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  button {
+    background-color: #E64E60;
+    color: #fff;
+    box-shadow: 0 2px 0 0 #BD3545;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 0 #BD3545;
+  }
+
+  button:hover {
+    background-color: #ED6878;
+  }
+
+  button:active {
+    box-shadow: 0 -2px 0 #9E2937, inset 0 -2px 0 #fff;
+    background-color: #BD3545;
+
+    span {
+      position: relative;
+      top: -2px;
+    }
+  }
+}
+
+.new-event-modal .input-container {
+
+  label, input {
+    display: block;
+  }
+
+  label {
+    color: $darkgray;
+    margin-bottom: 3px;
+  }
+
+  input {
+    background-color: #fff;
+    text-align: left;
+    width: 100%;
+    display: block;
+    outline: 0;
+    border: 0px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 12px 12px 12px 38px;
+    margin-bottom: 18px;
+  }
+
+  input:focus {
+    border: 1px solid #82BAD9;
+  }
+
+  .new-event-icon {
+    position: absolute;
+    top: 39px;
+    left: 15px;
+    color: $gray;
+  }
+}

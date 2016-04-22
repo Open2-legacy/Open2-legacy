@@ -1,0 +1,29 @@
+<div class="auth-form signup-form">
+  <div class="logo-open2"></div>
+  <div class="form-group" ng-controller="signupCtrl">
+
+  <!-- Loading Spinner -->
+  <div class="loading" ng-show="loading">
+    <div class="spinner">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+  </div>
+
+    <p class="auth-label">Sign Up</p>
+    <div class="input-container">
+      <input ng-enter="submit()" type="text" name="username" ng-model="username" placeholder="Username">
+      <i class="fa fa-user login-icon" aria-hidden="true"></i>
+    </div>
+    <div class="input-container">
+      <input ng-enter="submit()" type="password" name="password "ng-model="password" placeholder="Password">
+      <i class="fa fa-lock login-icon" aria-hidden="true"></i>
+    </div>
+    <div class="input-container">
+      <input ng-enter="submit()" type="text" name="imageurl "ng-model="imageUrl" placeholder="Profile Image URL">
+      <i class="fa fa-image login-icon" aria-hidden="true"></i>
+    </div>
+    <button ng-click="submit()" aria-label="Eat cake"><span>Sign Up!</span></button>
+    <i class="fa fa-angle-double-left" aria-hidden="true"></i>&nbsp;<a href="" class="signup-link" ng-click="redirectToLogin()">Back to Login</a>
+  </div>
+</div>

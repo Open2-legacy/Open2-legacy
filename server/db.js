@@ -3,6 +3,8 @@ var fs = require('fs');
 var dbconfig = require('./dbconfig');
 var bcrypt = require('bcrypt');
 
+console.log(dbconfig);
+
 var db = mysql.createConnection({
 	host: dbconfig.host,
 	user: dbconfig.user,

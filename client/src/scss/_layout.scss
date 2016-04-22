@@ -1,0 +1,25 @@
+// body {
+// 	background-color: lavender;
+// }
+
+$topbar: 60px;
+
+.admin-bar {
+	text-align: center;
+	position: fixed;
+  width: 100%;
+	background-color: $blue;
+	height: $topbar;
+	z-index: 5;
+}
+
+@import 'sidebar';
+
+#sidebar-wrapper {
+	width: 25%;
+}
+
+#contentWrapper {
+	margin-left: 25%;
+	width: 75%;
+}
