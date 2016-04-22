@@ -46,19 +46,11 @@ angular
 
     // signup
       var signup = function(user) {
-<<<<<<< Updated upstream
         var request = {
         method : 'POST',
         url : baseUrl+'signup/newuser',
         data : user
       };
-=======
-        var request= {
-          method : 'POST',
-          url : baseUrl+'signup/newuser',
-          data : user
-        };
->>>>>>> Stashed changes
       
       return $http(request).then(success, err);
       

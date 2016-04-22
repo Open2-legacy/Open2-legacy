@@ -19,7 +19,6 @@ angular
     return (item.createdBy === 1);
   }
 
-
   $scope.toggleExpand = function(n) {
     var toggleStatus = !$scope['expand' + n];
     $scope['expand' + n] = toggleStatus;
@@ -108,7 +107,8 @@ angular
     .joinEvent(joinInfo, $scope.events.eventsIgoTo)
     .then(function() {
       console.log('eventsIgoto', $scope.events.eventsIgoTo);
-    })
+    });
+    
     // $route.reload();
   }
 };
