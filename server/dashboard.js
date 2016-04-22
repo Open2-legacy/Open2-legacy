@@ -96,40 +96,33 @@ router.get('/friends', function(request, response){
 });
 
 router.post('/join', function(req, res){
-  var username = req.body.user;
+  var username = req.body.username;
   var eventid = req.body.eventId;
-  var userid;
+  var userid = req.body.userId
+
+  console.log(req.body);
   
-  helper.getUserId(username)
-  .then(function(resp){
-    userid = resp[0].id;
-    return resp[0].id;
-    })
-  .then(function(resp){
-    helper.checkUserEvent(resp,eventid,false)
+
+  helper.checkUserEvent(eventid,false)
     .then(function(resp){
-    return resp;
-    })
-  .then(function(resp){
-    if(resp.length !== 0){
-      res.json({
+      if(resp.length !== 0){
+        res.json({
           username : username,
           success : false,
           message : 'that event already exists!'
-          });
-    } else {
-      helper.insertEvent(userid,eventid,false)
-      .then(function(){
-        res.json({
-          username : username,
-          userid : userid,
-          eventid: eventid,
-          success : true,
-          message : 'you joined the event'
-          });
         });
+      } else {
+        helper.insertEvent(userid,eventid,false)
+          .then(function(){
+            res.json({
+              username : username,
+              userid : userid,
+              eventid: eventid,
+              success : true,
+              message : 'you joined the event'
+            });
+          });
       }
-    });
   });
 });
 
@@ -146,9 +139,10 @@ router.post('/join', function(req, res){
 
 
 router.post('/unjoin',function(req,res){
-    var userEventId=req.body.eventid;
+    var eventId = req.body.eventId;
+    var userId = req.body.userId;
     console.log('this is the request: ', req.body);
-    helper.removeUserEvent(userEventId).then(function(resp){
+    helper.removeUserEvent(eventId, userId).then(function(resp){
       console.log('this is unjoin resp : ', resp);
       res.json({
         success : true,
@@ -163,7 +157,6 @@ router.get('/allEvents', function(req, res){
   var allUserEvents;
   var allEvents;
   helper.getAllEvents().then(function(response){
-    console.log('all events response: ', response);
     // allEvents = response.data.response;
     res.json({
       success : true,

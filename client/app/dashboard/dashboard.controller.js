@@ -65,6 +65,9 @@ angular
      // creating the list of events that are created by the user's friends, but aren't joined by the user
     data.forEach(function(item) {
      if (item.username !== localStorage.getItem('username') && item.created_by === 0) {
+      if (item.eventname === 'Go hiking') {
+        console.log(moment(Date.parse(item.timestamp)).utcOffset("-07:00").format('MMMM Do YYYY, h:mm:ss a'));
+      }
        eventsToJoin.push({
         'eventname': item.eventname,
         'id': item.id,
@@ -86,9 +89,9 @@ angular
 ////////////////end of uploading dashboard
 
  
- // join or unjoin event
+// join or unjoin event
 
- $scope.join = function(event) {
+$scope.join = function(event) {
   console.log('event =', event);
   // console.log('id =',id, 'status=', status)
      //join
@@ -124,14 +127,14 @@ angular
 
 $scope.unjoinEvent = Services.unjoinEvent;
 
- Services.uploadFriendslist()
- .then(function(data){
-    //console.log("friendslist i got from server ", data.data)
-    $scope.friends = data.data; 
- });
+Services.uploadFriendslist()
+.then(function(data){
+  //console.log("friendslist i got from server ", data.data)
+  $scope.friends = data.data;
+});
 
- $scope.getAllEvents = Services.getAllEvents();
-  $scope.getAllUserEvents = Services.getAllUserEvents();
+// $scope.getAllEvents = Services.getAllEvents();
+// $scope.getAllUserEvents = Services.getAllUserEvents();
 
 
 
@@ -164,18 +167,18 @@ $scope.unjoinEvent = Services.unjoinEvent;
     Services.eventsPost(eventInfo)
     .then(function(respData){
       //console.log('i got this back from server/database', respData);
-      $route.reload(); //
+      location.reload();
     });
   };
 
 })
 
 /// this reversed the order of the events displayed on dashboard
-.filter('reverse', function() {
-  return function(items) {
-    return items.slice().reverse();
-  };
-});
+// .filter('reverse', function() {
+//   return function(items) {
+//     return items.slice().reverse();
+//   };
+// });
 
 
 function DialogController($scope, $mdDialog) {

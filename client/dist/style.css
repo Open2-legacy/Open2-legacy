@@ -258,7 +258,8 @@ input, button {
 
 .admin-bar {
   text-align: center;
-  position: relative;
+  position: fixed;
+  width: 100%;
   background-color: #105277;
   height: 60px;
   z-index: 5; }
@@ -576,6 +577,50 @@ input, button {
 .admin-bar .logout:hover {
   color: #BAD7E8; }
 
+.events-container {
+  padding: 25px; }
+  .events-container h2 {
+    margin: 0 0 1em 0; }
+
+.events-list li {
+  display: inline-block;
+  width: 47.5%;
+  margin: 0 0 25px 0;
+  padding: 10px;
+  margin-left: 0;
+  background-color: #ddd;
+  border-radius: 3px; }
+  .events-list li button {
+    background-color: #E64E60;
+    color: #fff;
+    box-shadow: 0 2px 0 0 #BD3545;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 0 #BD3545; }
+  .events-list li button:hover {
+    background-color: #ED6878; }
+  .events-list li button:active {
+    box-shadow: 0 -2px 0 #9E2937, inset 0 -2px 0 #fff;
+    background-color: #BD3545; }
+    .events-list li button:active span {
+      position: relative;
+      top: -2px; }
+
+.events-list li:nth-child(odd) {
+  margin-right: 0;
+  margin-left: 5%; }
+
+.events-list li p {
+  margin: 4px 0; }
+
+.events-list li .title {
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 0 4px 0; }
+
+.events-list li .fa {
+  color: #777;
+  margin-right: 10px; }
+
 md-backdrop.md-opaque {
   opacity: .48; }
 
@@ -637,12 +682,12 @@ md-backdrop.md-opaque.ng-enter-active {
   background-color: #fff; }
 
 #messageContainer {
-  height: 500px;
+  height: 400px;
   overflow: auto;
   box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.4); }
 
 .message-single {
-  padding: 15px 25px; }
+  padding: 11px 15px; }
   .message-single * {
     margin: 0; }
   .message-single p {
@@ -698,8 +743,10 @@ md-backdrop.md-opaque.ng-enter-active {
       right: 13px;
       color: #7D9EB3;
       cursor: pointer; }
-    .message-input-container .input-container .fa-hover {
-      color: #497087; }
+    .message-input-container .input-container .fa:hover {
+      color: #105277; }
+    .message-input-container .input-container .fa:focus {
+      outline: 0; }
   .message-input-container .button-container {
     width: 15%;
     float: right;

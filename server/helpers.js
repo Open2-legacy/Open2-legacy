@@ -49,9 +49,9 @@ function insertEvent(userid, eventid, status){
   });
 }
 
-function removeUserEvent(userEventId){
+function removeUserEvent(eventId, userId){
   return new Promise(function(resolve, reject){
-    db.query('DELETE FROM UserEvents Where `id`= ?;',[userEventId], function(err,query){
+    db.query('DELETE FROM UserEvents Where `event_id` = ? AND `user_id` = ?;',[eventId, userId], function(err,query){
       resolve(query);
     });
   });
@@ -71,8 +71,6 @@ function getAllEvents(){
   return new Promise(function(resolve, reject){
     // console.log('this is the userid in helper:', userid);
     db.query('SELECT * FROM Events', function(err, query){
-      console.log('this is error: ', err);
-      console.log('this is query: ', query);
       resolve(query);
     });
   });

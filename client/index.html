@@ -47,6 +47,9 @@
   <!-- Emojify -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/0.9.5/emojify.min.js"></script>
 
+  <!-- Underscore -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  
   <!-- Authored JS -->
   <script src="app/app.js"></script>
   <script src="app/helpers.js"></script>
@@ -57,18 +60,17 @@
   <script src="app/dashboard/newEvent.controller.js"></script>
   <script src="app/login/login.controller.js"></script>
   <script src="app/signup/signup.controller.js"></script>
+  <script src="app/dashboard/otherEvents.controller.js"></script>
+  <script src="app/dashboard/hostedEvents.controller.js"></script>
+  <script src="app/dashboard/myEvents.controller.js"></script>
   <script src="app/chat/chat.controller.js"></script>
+  <script src="app/dashboard/allEvents.factory.js"></script>
 
   
 </head>
 <body ng-app="myApp" class="{{bodyClass}}">
 
-
   <div class="page {{pageClass}}" ng-view></div>
-
-  <!-- Angular Material requires Angular.js Libraries -->
-
-  <!-- Your application bootstrap  -->
   
   <script>
     // Create a new Firebase reference, and a new instance of the Login client

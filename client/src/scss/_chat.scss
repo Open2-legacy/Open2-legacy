@@ -4,13 +4,13 @@
 }
 
 #messageContainer {
-	height: 500px;
+	height: 400px;
 	overflow: auto;
   box-shadow:inset 0 0 8px 0 rgba(0,0,0,0.4);
 }
 
 .message-single {
-  padding: 15px 25px;
+  padding: 11px 15px;
 
   * {
     margin: 0;
@@ -92,8 +92,12 @@
       cursor: pointer;
     }
 
-    .fa-hover {
-      color: #497087;
+    .fa:hover {
+      color: $blue;
+    }
+
+    .fa:focus {
+      outline: 0;
     }
   }
 

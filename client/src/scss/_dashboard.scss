@@ -25,3 +25,66 @@
     color: $lightblue;
   }
 }
+
+.events-container {
+  padding: 25px;
+
+  h2 {
+    margin: 0 0 1em 0;
+  }
+}
+
+.events-list {
+  
+  li {
+    display: inline-block;
+    width: 47.5%;
+    margin: 0 0 25px 0;
+    padding: 10px;
+    margin-left: 0;
+    background-color: #ddd;
+    border-radius: 3px;
+
+    button {
+      background-color: #E64E60;
+      color: #fff;
+      box-shadow: 0 2px 0 0 #BD3545;
+      margin-bottom: 10px;
+      text-shadow: 0 1px 0 #BD3545;
+    }
+
+    button:hover {
+      background-color: #ED6878;
+    }
+
+    button:active {
+      box-shadow: 0 -2px 0 #9E2937, inset 0 -2px 0 #fff;
+      background-color: #BD3545;
+
+      span {
+        position: relative;
+        top: -2px;
+      }
+    }
+  }
+
+  li:nth-child(odd) {
+    margin-right: 0;
+    margin-left: 5%;
+  }
+
+  li p {
+    margin: 4px 0;
+  }
+
+  li .title {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 0 4px 0;
+  }
+
+  li .fa {
+    color: $darkgray;
+    margin-right: 10px;
+  }
+}
